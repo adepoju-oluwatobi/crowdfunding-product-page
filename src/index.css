@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .header-container.menu-open {
+            background-color: #3cb4ac;
+            /* Adjust the opacity value as needed */
+        }
+}
