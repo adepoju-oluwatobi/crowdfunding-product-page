@@ -1,9 +1,16 @@
 import React from 'react'
 import Logo from "../assets/logo-mastercraft.svg";
 import BookmarkIcon from '../assets/icon-bookmark.svg'
+import closeModalIcon from '../assets/icon-close-menu.svg';
 import Header from './Header';
 
 function Body() {
+
+  function openModal(){
+    return (
+      <div>Test</div>
+    )
+  }
   return (
     <div className="flex flex-col gap-4 items-center">
       <div className="bg-white shadow-xl w-[90%] p-6 mt-[-18%] rounded-xl">
@@ -66,7 +73,7 @@ function Body() {
           </p>
         </div>
 
-        <div className="bg-white border border-slate-300 w-[90%] m-auto rounded-lg">
+        <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg mb-6">
           <div className="text-left p-4">
             <p className="font-bold">Bamboo Stand</p>
             <p className="text-[#3cb4ac] font-bold mb-4">Pledge $25 or more</p>
@@ -79,9 +86,160 @@ function Body() {
               <p className="font-bold text-3xl">101</p>
               <p>left</p>
             </div>
-            <p className="p-4 bg-[#3cb4ac] text-white font-bold w-[150px] rounded-full">Select Reward</p>
+            <p
+              className="p-4 bg-[#3cb4ac] text-white font-bold w-[150px] rounded-full text-center"
+              onClick={openModal}
+            >
+              Select Reward
+            </p>
           </div>
         </div>
+
+        <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg mb-6">
+          <div className="text-left p-4">
+            <p className="font-bold">Black Edition Stand</p>
+            <p className="text-[#3cb4ac] font-bold mb-4">Pledge $75 or more</p>
+            <p className="mb-4 opacity-50">
+              You get an egronomic stand made of natural bamboo. you've helped
+              us lunch our promotional campaign and you'll be added to a special
+              backer member list.
+            </p>
+            <div className="flex items-center gap-2 mb-6">
+              <p className="font-bold text-3xl">64</p>
+              <p>left</p>
+            </div>
+            <p className="p-4 bg-[#3cb4ac] text-white font-bold w-[150px] rounded-full text-center">
+              Select Reward
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg opacity-[80%]">
+          <div className="text-left p-4">
+            <p className="font-bold">Mahogany Special Edition</p>
+            <p className="text-[#3cb4ac] font-bold mb-4">Pledge $200 or more</p>
+            <p className="mb-4 opacity-50">
+              You get an egronomic stand made of natural bamboo. you've helped
+              us lunch our promotional campaign and you'll be added to a special
+              backer member list.
+            </p>
+            <div className="flex items-center gap-2 mb-6">
+              <p className="font-bold text-3xl">0</p>
+              <p>left</p>
+            </div>
+            <p className="p-4 bg-[gray] text-white font-bold w-[150px] rounded-full text-center">
+              Out of stock
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white shadow-xl w-[90%] p-6 mt-[-80%] rounded-xl absolute">
+        <div className="flex justify-between mb-4">
+          <p className="font-bold text-xl">Back this project</p>
+          {/* <img className="" src={closeModalIcon} alt="" /> */}
+          <p className="font-bold">X</p>
+        </div>
+        <p className="text-sm opacity-50 mb-4">
+          Want to support us in bringing Mastercraft Bamboo Monitor Riser Out in
+          the world?
+        </p>
+
+        <form action="">
+          <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg mb-6">
+            <div className="text-left p-4">
+              <div className="flex gap-2">
+                <input type="radio" />
+                <p className="font-bold">Pledge with no reward</p>
+              </div>
+              <p className="text-sm opacity-50 mt-4">
+                Choose to support us without a reward if you simply believe in
+                our project. As a backer you will be signed up to recieve
+                product updates via email.
+              </p>
+            </div>
+          </div>
+          <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg mb-6">
+            <div className="text-left p-4">
+              <div className="flex items-center gap-2">
+                <input type="radio" />
+                <div>
+                  <p className="font-bold">Bamboo Stand</p>
+                  <p className="text-[#3cb4ac] font-bold mb-4">
+                    Pledge $25 or more
+                  </p>
+                </div>
+              </div>
+              <p className="mb-4 opacity-50">
+                You get an egronomic stand made of natural bamboo. you've helped
+                us lunch our promotional campaign and you'll be added to a
+                special backer member list.
+              </p>
+              <div className="flex items-center gap-2 mb-6">
+                <p className="font-bold text-3xl">101</p>
+                <p>left</p>
+              </div>
+              <hr className="w-[100%] p-4" />
+              <p>Enter your pledge</p>
+              <p className="relative opacity-50 top-10 left-3">$</p>
+              <div className="flex gap-2 mt-2">
+                <div>
+                  <input
+                    required
+                    type="number" // Changed type to "number" for numeric input
+                    placeholder="Enter your pledge amount" // Added placeholder text
+                    className="border w-[90px] p-3 rounded-full"
+                  />
+                </div>
+                <p className="p-4 bg-[#3cb4ac] text-white font-bold rounded-full">
+                  Continue
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg mb-6">
+            <div className="text-left p-4">
+              <p className="font-bold">Black Edition Stand</p>
+              <p className="text-[#3cb4ac] font-bold mb-4">
+                Pledge $75 or more
+              </p>
+              <p className="mb-4 opacity-50">
+                You get an egronomic stand made of natural bamboo. you've helped
+                us lunch our promotional campaign and you'll be added to a
+                special backer member list.
+              </p>
+              <div className="flex items-center gap-2 mb-6">
+                <p className="font-bold text-3xl">64</p>
+                <p>left</p>
+              </div>
+              <p className="p-4 bg-[#3cb4ac] text-white font-bold w-[150px] rounded-full text-center">
+                Select Reward
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg opacity-[80%]">
+            <div className="text-left p-4">
+              <p className="font-bold">Mahogany Special Edition</p>
+              <p className="text-[#3cb4ac] font-bold mb-4">
+                Pledge $200 or more
+              </p>
+              <p className="mb-4 opacity-50">
+                You get an egronomic stand made of natural bamboo. you've helped
+                us lunch our promotional campaign and you'll be added to a
+                special backer member list.
+              </p>
+              <div className="flex items-center gap-2 mb-6">
+                <p className="font-bold text-3xl">0</p>
+                <p>left</p>
+              </div>
+              <p className="p-4 bg-[gray] text-white font-bold w-[150px] rounded-full text-center">
+                Out of stock
+              </p>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   );
