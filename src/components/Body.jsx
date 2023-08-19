@@ -134,7 +134,7 @@ function Body() {
         </div>
       </div>
 
-      <div className="bg-white shadow-xl w-[90%] p-6 mt-[-80%] rounded-xl absolute">
+      <div className="bg-white shadow-xl w-[90%] p-6 mt-[-30%] rounded-xl absolute">
         <div className="flex justify-between mb-4">
           <p className="font-bold text-xl">Back this project</p>
           {/* <img className="" src={closeModalIcon} alt="" /> */}
