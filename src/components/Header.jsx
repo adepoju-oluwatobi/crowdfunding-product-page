@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavIconOpen from "../assets/icon-hamburger.svg";
 import NavIconClose from "../assets/icon-close-menu.svg";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isBgOverlayVisible, setIsBgOverlayVisible] = useState(false);
+
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden"; // Hide scrollbar
+    } else {
+      document.body.style.overflow = "visible"; // Show scrollbar
+    }
+  }, [isNavOpen]);
 
   const toggleNav = () => {
     setIsNavOpen((prevState) => !prevState);

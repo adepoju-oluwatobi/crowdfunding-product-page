@@ -5,14 +5,17 @@ import closeModalIcon from '../assets/icon-close-menu.svg';
 import Header from './Header';
 
 function Body() {
-
+  let closeModalIcon = document.getElementById("close-modal-icon");
+  let modal = document.getElementById("modal");
+  let container = document.getElementById('container');
   function openModal(){
-    return (
-      <div>Test</div>
-    )
+    modal = document.getElementById("modal").style.display = "block";
+  }
+  function closeModal(){
+    modal = document.getElementById("modal").style.display = "none";
   }
   return (
-    <div className="flex flex-col gap-4 items-center">
+    <div className="flex flex-col gap-4 items-center" id="container">
       <div className="bg-white shadow-xl w-[90%] p-6 mt-[-18%] rounded-xl">
         <div className="flex flex-col items-center text-center">
           <img className="w-10 relative top-[-45px] z-[0]" src={Logo} alt="" />
@@ -134,11 +137,16 @@ function Body() {
         </div>
       </div>
 
-      <div className="bg-white shadow-xl w-[90%] p-6 mt-[-30%] rounded-xl absolute">
+      <div
+        className="bg-white shadow-xl w-[90%] p-6 mt-[-30%] rounded-xl absolute hidden"
+        id="modal"
+      >
         <div className="flex justify-between mb-4">
           <p className="font-bold text-xl">Back this project</p>
           {/* <img className="" src={closeModalIcon} alt="" /> */}
-          <p className="font-bold">X</p>
+          <p className="font-bold" id="close-modal-icon" onClick={closeModal}>
+            X
+          </p>
         </div>
         <p className="text-sm opacity-50 mb-4">
           Want to support us in bringing Mastercraft Bamboo Monitor Riser Out in
@@ -149,7 +157,7 @@ function Body() {
           <div className="bg-white border border-slate-300 w-[100%] m-auto rounded-lg mb-6">
             <div className="text-left p-4">
               <div className="flex gap-2">
-                <input type="radio" />
+                <input type="radio" className="transform scale-4" />
                 <p className="font-bold">Pledge with no reward</p>
               </div>
               <p className="text-sm opacity-50 mt-4">
@@ -180,18 +188,20 @@ function Body() {
                 <p>left</p>
               </div>
               <hr className="w-[100%] p-4" />
-              <p>Enter your pledge</p>
-              <p className="relative opacity-50 top-10 left-3">$</p>
+              <p className="opacity-50 text-center mb-4">Enter your pledge</p>
               <div className="flex gap-2 mt-2">
-                <div>
+                <div className="relative">
+                  <span className="absolute opacity-50 inset-y-0 left-2 flex items-center text-gray-600 font-bold">
+                    $
+                  </span>
                   <input
                     required
-                    type="number" // Changed type to "number" for numeric input
-                    placeholder="Enter your pledge amount" // Added placeholder text
-                    className="border w-[90px] p-3 rounded-full"
+                    type="number"
+                    placeholder=""
+                    className="border pl-8 w-[90px] p-3 rounded-full py-2"
                   />
                 </div>
-                <p className="p-4 bg-[#3cb4ac] text-white font-bold rounded-full">
+                <p className="py-2 text-center bg-[#3cb4ac] text-white font-bold w-[120px] rounded-full">
                   Continue
                 </p>
               </div>
